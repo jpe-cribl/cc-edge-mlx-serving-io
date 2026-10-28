@@ -1,0 +1,6 @@
+{
+  "_raw": "{\"model\":\"example-model\",\"tokens_per_sec\":42.5}",
+  "model": "example-model",
+  "tokens_per_sec": 42.5,
+  "_time": 1793000000
+}
