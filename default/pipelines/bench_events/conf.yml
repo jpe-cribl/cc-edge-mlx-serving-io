@@ -1,0 +1,10 @@
+output: default
+functions:
+  - id: eval
+    filter: "true"
+    conf:
+      add:
+        - name: index
+          value: "'llm'"
+        - name: sourcetype
+          value: "'mlx:bench'"

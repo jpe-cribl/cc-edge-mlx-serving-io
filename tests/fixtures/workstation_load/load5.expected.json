@@ -1,0 +1,7 @@
+{
+  "_metric": "node_load5",
+  "_value": 1.75,
+  "host_role": "workstation",
+  "index": "llm",
+  "sourcetype": "mlx:metrics"
+}

@@ -1,0 +1,19 @@
+output: default
+functions:
+  - id: drop
+    filter: "!Number.isFinite(Number(node_load5))"
+  - id: eval
+    filter: "true"
+    conf:
+      add:
+        - name: _metric
+          value: "'node_load5'"
+        - name: _value
+          value: "Number(node_load5)"
+        - name: host_role
+          value: "'workstation'"
+        - name: index
+          value: "'llm'"
+        - name: sourcetype
+          value: "'mlx:metrics'"
+      remove: [node_load5]

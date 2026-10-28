@@ -1,0 +1,15 @@
+{
+  "name": "cc-edge-mlx-serving-io",
+  "version": "0.1.0",
+  "minLogStreamVersion": "4.16.0",
+  "author": "Jacob <20714140+JacobPEvans-personal@users.noreply.github.com>",
+  "description": "Cribl Edge pipelines for MLX model-serving, benchmark, and workstation telemetry.",
+  "displayName": "Cribl Edge MLX Serving Pack",
+  "tags": {
+    "streamtags": [],
+    "dataType": [
+      "logs"
+    ]
+  },
+  "exports": []
+}

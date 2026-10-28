@@ -1,0 +1,64 @@
+id: default
+groups: {}
+comments: []
+routes:
+  # Validator rules:
+  #   - id and pipeline must be descriptive (no 'main', no 'route1')
+  #   - filter must be a real expression (not literally 'false' / '0')
+  #   - output MUST be __group (not input_id)
+  # workstation_load has no route; it is attached to its source by pipeline id.
+  - id: llm_logs
+    name: Model server logs
+    final: true
+    disabled: false
+    pipeline: llm_logs
+    description: "Model-server and cluster log lines"
+    enableOutputExpression: false
+    targetContext: group
+    filter: "datatype=='llm_logs'"
+    clones: []
+    output: __group
+  - id: bench_events
+    name: Benchmark events
+    final: true
+    disabled: false
+    pipeline: bench_events
+    description: "Benchmark result rows"
+    enableOutputExpression: false
+    targetContext: group
+    filter: "datatype=='bench_events'"
+    clones: []
+    output: __group
+  - id: llm_metrics
+    name: LLM system metrics
+    final: true
+    disabled: false
+    pipeline: llm_metrics
+    description: "System metric samples and judge process start time"
+    enableOutputExpression: false
+    targetContext: group
+    filter: "datatype=='llm_metrics'"
+    clones: []
+    output: __group
+  - id: workstation_offload
+    name: Workstation offload records
+    final: true
+    disabled: false
+    pipeline: workstation_offload
+    description: "Offbox sync records"
+    enableOutputExpression: false
+    targetContext: group
+    filter: "datatype=='workstation_offload'"
+    clones: []
+    output: __group
+  - id: workstation_jobs
+    name: Workstation local jobs
+    final: true
+    disabled: false
+    pipeline: workstation_jobs
+    description: "Local job log lines"
+    enableOutputExpression: false
+    targetContext: group
+    filter: "datatype=='workstation_jobs'"
+    clones: []
+    output: __group
