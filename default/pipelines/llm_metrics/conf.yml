@@ -1,0 +1,18 @@
+output: default
+functions:
+  - id: eval
+    filter: "true"
+    conf:
+      add:
+        - name: index
+          value: "'llm'"
+        - name: sourcetype
+          value: "'mlx:metrics'"
+  - id: eval
+    filter: "process_start_time_seconds !== undefined"
+    conf:
+      add:
+        - name: _metric
+          value: "'judge_process_start_time_seconds'"
+        - name: _value
+          value: "Number(process_start_time_seconds)"
